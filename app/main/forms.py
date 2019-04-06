@@ -20,26 +20,15 @@ class UrgiconForm(FlaskForm):
     #                     default, widget, render_kw, _form, _name, _prefix,
     #                     _translations, _meta
 
-    chest_pain = BooleanField(label = 'chest_pain', validators=[DataRequired()], \
-                              description = questions['chest_pain'])
-    abdominal_pain = BooleanField(label = 'abdominal_pain', validators=[DataRequired()], \
-                                  description = questions['abdominal_pain'])
-    nausea = BooleanField(label = 'nausea', validators=[DataRequired()], \
-                          description = questions['nausea'])
-    breathing = BooleanField('breathing', validators=[DataRequired()], \
-                            description = questions['breathing'] )
-    injury = BooleanField('injury', validators=[DataRequired()], \
-                            description = questions['injury'] )
-    fever = BooleanField('fever', validators=[DataRequired()], \
-                            description = questions['fever'] )
-    cough = BooleanField('cough', validators=[DataRequired()], \
-                            description = questions['cough'] )
-    pain = BooleanField('pain', validators=[DataRequired()], \
-                            description = questions['pain'] )
-    rash = BooleanField('rash', validators=[DataRequired()], \
-                            description = questions['rash'] )
-    headache = BooleanField('headache', validators=[DataRequired()], \
-                            description = questions['headache'] )
-    back_pain = BooleanField('back_pain', validators=[DataRequired()], \
-                            description = questions['back_pain'] )
+    chest_pain = BooleanField(label = 'chest_pain', description = questions['chest_pain'])
+    abdominal_pain = BooleanField(label = 'abdominal_pain', description = questions['abdominal_pain'])
+    nausea = BooleanField(label = 'nausea', description = questions['nausea'])
+    breathing = BooleanField('breathing', description = questions['breathing'] )
+    injury = BooleanField('injury', description = questions['injury'] )
+    fever = BooleanField('fever', description = questions['fever'] )
+    cough = BooleanField('cough', description = questions['cough'] )
+    pain = BooleanField('pain', description = questions['pain'] )
+    rash = BooleanField('rash', description = questions['rash'] )
+    headache = BooleanField('headache', description = questions['headache'] )
+    back_pain = BooleanField('back_pain', description = questions['back_pain'] )
 

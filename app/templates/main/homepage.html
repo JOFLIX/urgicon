@@ -5,8 +5,8 @@
 {% endblock %}
 {% block content %}
     <div class="container-fluid">
+        {% if not initial %}
         </br>
-        {% if dx %}
             {% if dx > 4 %}
                 <h1> DIAL 911 IMMEDIATELY! GO TO THE E.R.! </h1>
             {% elif dx == 4 %}
@@ -18,8 +18,8 @@
             {% elif dx < 2 %}
                 <h1> It's probably nothing. </h1>
             {% endif %}
-        {% endif %}
         </br>
+        {% endif %}
 
         <form method="POST" action="/">
             {{ form.csrf_token }}
