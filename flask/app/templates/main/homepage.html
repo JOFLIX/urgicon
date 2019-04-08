@@ -1,0 +1,65 @@
+{% extends 'main/base.html' %}
+{% block head %}
+{% endblock %}
+{% block body %}
+
+    <br>
+    <div class="mx-auto" style="width: 800px;">
+    <div class="container-fluid bg-light text-dark rounded" style="opacity:0.8">
+        <br>
+        <h1 style="text-align: center;"> UrgiCon </h1>
+        <br>
+        <h2> Considering an ER visit? Use our form below and save. </h2>
+        <br>
+        {% if not initial %}
+                {% if dx > 4 %}
+                    <h1> DIAL 911 IMMEDIATELY! GO TO THE E.R.! </h1>
+                {% elif dx == 4 %}
+                    <h1> Go to the nearest E.R. or call 911 if unable. </h1>
+                {% elif dx == 3 %}
+                    <h1> Go to Urgent Care or E.R. </h1>
+                {% elif dx <= 2 %}
+                    <h1> Call your Primary Care Provider or go to Urgent Care.</h1>
+                {% endif %}
+        {% endif %}
+        <br>
+    </div>
+    <br>
+            <div class = "center" style="float: none; margin: 0 auto;">
+<div class="mx-auto" style="width: 800px;">
+<div class="container-fluid bg-light text-dark rounded" style="opacity:0.8">
+    <br>
+        <form method="POST" action="/">
+            {{ form.csrf_token }}
+            {% for field in form %}
+                {% if field.type =='IntegerField' %}
+                    <div class="form-group-row" style="float: none; margin: 0 auto;">
+                        <label for="age" class="col-md-3 col-form-label">
+                            {{field.description}}</label>
+                            {{field}}
+                    </div>
+                {% elif field.type =='BooleanField' %}
+                    <div class="form-group row" style="float: none; margin: 0 auto;">
+                        <div class="col-md-4">{{field.description}}</div>
+                        <div class="col-sm-2">
+                            <div class = "form-check">
+                                {{field}}
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <br>
+            <input type="submit" value="Get Results">
+            <br>
+            <br>
+        </form>
+    </div>
+    </div>
+    </div>
+</div>
+        </br>
+
+        </br>
+    </div>
+{% endblock %}
